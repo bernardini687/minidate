@@ -1,13 +1,24 @@
-export type DateInput =
-  | number
-  | 'dd-mm-yyyy'
-  | 'dd-m-yyyy'
-  | 'd-mm-yyyy'
-  | 'd-m-yyyy'
-  | 'dd-mm'
-  | 'dd-m'
-  | 'd-mm'
+export default function (value?: number | string): Date {
+  const now = new Date(Date.now())
+  if (!value) {
+    return now
+  }
 
-export function shape(value?: DateInput): Date {
-  return new Date(Date.now())
+  const [dd, mm, yyyy] = value
+    .toString()
+    .split('-')
+    .map(x => x.padStart(2, '0'))
+
+  let nowISO = now.toISOString()
+  nowISO = nowISO.slice(0, 8) + dd + nowISO.slice(10)
+
+  if (mm) {
+    nowISO = nowISO.slice(0, 5) + mm + nowISO.slice(7)
+  }
+
+  if (yyyy) {
+    nowISO = yyyy + nowISO.slice(4)
+  }
+
+  return new Date(nowISO)
 }
