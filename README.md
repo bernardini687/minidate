@@ -7,10 +7,10 @@ simple helper to get a Date out of a day value, defaulting the rest to the curre
 # usage
 
 ```
-miniDate([value) => Date
+miniDate(value) => Date
 
-  [value] (Number | String) : just the day value
-  [value] (String)          : DD[-MM[-YYYY]]
+  value (Number | String) : just the day value
+  value (String)          : DD[-MM[-YYYY]]
 ```
 
 ```ts
