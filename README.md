@@ -7,23 +7,23 @@ simple helper to get a Date out of a day value, defaulting the rest to the curre
 # usage
 
 ```
-miniDate([value, [separator='-']]) => Date
+miniDate([value) => Date
 
   [value] (Number | String) : just the day value
   [value] (String)          : DD[-MM[-YYYY]]
-  [separator='-'] (String)  : one of . / _ ,
 ```
 
 ```ts
-import * as minidate from 'https://deno.land/x/minidate/mod.ts'
+import miniDate from 'https://deno.land/x/minidate/mod.ts'
 
 // imagine today is the 5th of November 2020
 
-minidate.shape()             // output : new Date(2020, 10, 5)
-minidate.shape(3)            // output : new Date(2020, 10, 3)
-minidate.shape('4-7')        // output : new Date(2020, 6, 4)
-minidate.shape('7.01', '.')  // output : new Date(2020, 0, 7)
-minidate.shape('12-11-1990') // output : new Date(1990, 10, 12)
+miniDate()             // output : 2020-11-05[...]
+miniDate(3)            // output : 2020-11-03[...]
+miniDate('4-7')        // output : 2020-07-04[...]
+miniDate('07-01')      // output : 2020-01-07[...]
+miniDate('12-11-1990') // output : 1990-11-12[...]
+miniDate(32)           // output : Invalid Date
 ```
 
 # misc
