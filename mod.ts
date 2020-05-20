@@ -1,3 +1,4 @@
+/** @value A date string in the format DD[-MM[-YYYY]] */
 export default function (value?: number | string): Date {
   const now = new Date(Date.now())
   if (!value) {
