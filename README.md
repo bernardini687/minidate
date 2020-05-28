@@ -14,7 +14,7 @@ miniDate(value) => Date
 ```
 
 ```ts
-import miniDate from 'https://deno.land/x/minidate/mod.ts'
+import miniDate from 'https://deno.land/x/minidate@v1.0/mod.ts'
 
 // imagine today is the 5th of November 2020
 
